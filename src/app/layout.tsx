@@ -4,7 +4,6 @@ import "./globals.css";
 
 const quicksand = Quicksand({ 
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-quicksand"
  });
