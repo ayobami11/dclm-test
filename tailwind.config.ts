@@ -63,7 +63,7 @@ const config: Config = {
   			}
   		},
 		fontFamily: {
-			"primary": ["var(--font-quicksand)", ...defaultTheme.fontFamily.sans]
+			"primary": ["Quicksand", ...defaultTheme.fontFamily.sans]
 		}
   	}
   },
