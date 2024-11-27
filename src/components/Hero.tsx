@@ -31,7 +31,7 @@ const Hero = () => {
                 </h1>
                 <p className="text-xl mb-7 md:text-3xl">Testify of what God has done for you.</p>
 
-                <button className="bg-[hsl(209,83%,20%)] text-white text-sm font-semibold rounded-md py-2 px-4 w-fit">Share your Testimony</button>
+                <button className="bg-[hsl(209,83%,20%)] border border-[hsl(209,83%,20%)] transition duration-300 text-white text-sm font-semibold rounded-md py-2 px-4 w-fit hover:bg-white hover:text-[hsl(209,83%,20%)]">Share your Testimony</button>
             </header>
 
             <div>

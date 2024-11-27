@@ -42,23 +42,23 @@ const Header = () => {
                     <li>
                         <Link
                             className={`${pathname === "/contact" ? "active" : ""} [&.active]:underline text-[hsl(213,62%,23%)] font-semibold`}
-                            href="/contact">Contact Us</Link>
+                            href="/">Contact Us</Link>
                     </li>
                     <li>
                         <Link
                             className={`${pathname === "/live" ? "active" : ""} [&.active]:underline text-[hsl(213,62%,23%)] font-semibold`}
-                            href="/live">Watch Live</Link>
+                            href="/">Watch Live</Link>
                     </li>
                     <li>
                         <Link
                             className={`${pathname === "/testimonies" ? "active" : ""} [&.active]:underline text-[hsl(213,62%,23%)] font-semibold`}
-                            href="/testimonies">Testimonies</Link>
+                            href="/">Testimonies</Link>
                     </li>
                 </ul>
             </nav>
 
             <Link
-                className="text-[hsl(209,83%,20%)] border-[1.5px] border-current rounded-md py-4 px-6 whitespace-nowrap hidden md:block"
+                className="text-[hsl(209,83%,20%)] border-[1.5px] border-current rounded-md py-4 px-6 whitespace-nowrap hidden transition duration-300 hover:bg-[hsl(209,83%,20%)] hover:text-white md:block"
                 href="/">Log In</Link>
 
             <Button

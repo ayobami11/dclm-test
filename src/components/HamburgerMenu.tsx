@@ -27,13 +27,13 @@ const HamburgerMenu = ({ isOpen, closeMenu }: HamburgerMenuProps) => {
                         <Link href="/">Home</Link>
                     </li>
                     <li>
-                        <Link href="/contact">Contact Us</Link>
+                        <Link href="/">Contact Us</Link>
                     </li>
                     <li>
-                        <Link href="/live">Watch Live</Link>
+                        <Link href="/">Watch Live</Link>
                     </li>
                     <li>
-                        <Link href="/testimonies">Testimonies</Link>
+                        <Link href="/">Testimonies</Link>
                     </li>
                     <li>
                         <Link

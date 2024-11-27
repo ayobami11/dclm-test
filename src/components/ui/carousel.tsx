@@ -1,10 +1,14 @@
 "use client"
 
+import Image from "next/image";
+
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+
+import chevronLeftIcon from "../../../public/chevron-left.svg";
+import chevronRightIcon from "../../../public/chevron-right.svg";
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -216,7 +220,11 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeft className="h-4 w-4" />
+      <Image
+        src={chevronLeftIcon}
+        alt="Chevron left icon"
+        className="scale-50 md:scale-100"
+      />
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -245,12 +253,65 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRight className="h-4 w-4" />
+      <Image
+        src={chevronRightIcon}
+        alt="Chevron right icon"
+        className="scale-50 md:scale-100"
+      />
       <span className="sr-only">Next slide</span>
     </Button>
   )
 })
 CarouselNext.displayName = "CarouselNext"
+
+
+const CarouselDots = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>((props, ref) => {
+  const { api } = useCarousel();
+  const [updateState, setUpdateState] = React.useState(false);
+  const toggleUpdateState = React.useCallback(
+    () => setUpdateState((prevState) => !prevState),
+    []
+  );
+
+  React.useEffect(() => {
+    if (api) {
+      api.on('select', toggleUpdateState);
+      api.on('reInit', toggleUpdateState);
+
+      return () => {
+        api.off('select', toggleUpdateState);
+        api.off('reInit', toggleUpdateState);
+      };
+    }
+  }, [api, toggleUpdateState]);
+
+  const numberOfSlides = api?.scrollSnapList().length || 0;
+  const currentSlide = api?.selectedScrollSnap() || 0;
+
+  if (numberOfSlides > 1) {
+    return (
+      <div ref={ref} className={`flex justify-center gap-3.5 ${props.className}`}>
+        {Array.from({ length: numberOfSlides }, (_, i) => (
+          <Button
+            key={i}
+            className={`w-[3.52px] h-[3.52px] md:h-2 md:w-2 rounded-full p-0 ${i === currentSlide
+              ? 'scale-[2] transform bg-[hsl(209,83%,20%)] hover:bg-[hsl(209,83%,20%)]'
+              : 'bg-[hsla(0,0%,32%)] hover:bg-[hsla(0,0%,32%)]'
+              }`}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => api?.scrollTo(i)}
+          />
+        ))}
+      </div>
+    );
+  } else {
+    return <></>;
+  }
+});
+CarouselDots.displayName = 'CarouselDots';
 
 export {
   type CarouselApi,
@@ -259,4 +320,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDots
 }

@@ -16,7 +16,7 @@ const Footer = () => {
                 </div>
                 <Link
                     href="/"
-                    className="max-w-fit whitespace-nowrap bg-[hsl(213,62%,23%)] text-white font-semibold rounded-md py-4 px-6 inline-block"
+                    className="max-w-fit whitespace-nowrap bg-[hsl(213,62%,23%)] text-white border border-[hsl(213,62%,23%)] transition duration-300 font-semibold rounded-md py-4 px-6 inline-block hover:bg-white hover:text-[hsl(213,62%,23%)]"
                 >Contact Us</Link>
             </div>
             <div className="bg-[hsl(218,17%,91%)] h-px" />

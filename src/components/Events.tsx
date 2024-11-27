@@ -17,7 +17,7 @@ const Events = () => {
         </div>
         <figcaption className="md:max-w-[488px]">
           <header>
-            <span className="text-[hsl(209,83%,20%)] border-[1.5px] border-current py-2 px-4 mb-6 rounded-md inline-block"><abbr title="Global Crusade with Kumuyi">GCK</abbr> in Kumasi</span>
+            <span className="text-[hsl(209,83%,20%)] border-[1.5px] border-current py-2 px-4 mb-6 rounded-md inline-block transition duration-300 hover:text-white hover:bg-[hsl(209,83%,20%)]"><abbr title="Global Crusade with Kumuyi">GCK</abbr> in Kumasi</span>
             <h3 className="font-medium text-4xl leading-[2.8125rem] mb-8 md:text-[2.5rem]">Full Salvation and Healing Through Christ</h3>
           </header>
 
@@ -38,7 +38,7 @@ const Events = () => {
 
           <Link
             href="/live"
-            className="bg-[hsl(209,83%,20%)] text-white rounded-md py-2 px-3 flex gap-3 w-fit"
+            className="bg-[hsl(209,83%,20%)] border border-[hsl(209,83%,20%)] text-white transition duration-300 rounded-md py-2 px-3 flex gap-3 w-fit hover:bg-white hover:text-[hsl(209,83%,20%)]"
           >Connect Live
             <Image
               src={playIcon}
