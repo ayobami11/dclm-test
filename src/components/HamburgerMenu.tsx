@@ -37,7 +37,7 @@ const HamburgerMenu = ({ isOpen, closeMenu }: HamburgerMenuProps) => {
                     </li>
                     <li>
                         <Link
-                            className="text-[hsl(209,83%,20%)] border-[1.5px] border-current rounded-md py-2.5 px-4 whitespace-nowrap inline-block"
+                            className="text-[hsl(209,83%,20%)] border-[1.5px] border-current rounded-md py-4 px-6 whitespace-nowrap hidden transition duration-300 hover:bg-[hsl(209,83%,20%)] hover:text-white md:block"
                             href="/">Log In</Link>
                     </li>
                 </ul>
